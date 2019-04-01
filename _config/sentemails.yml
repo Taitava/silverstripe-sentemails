@@ -1,0 +1,10 @@
+---
+Name: sentemails
+---
+SilverStripe\Control\Email\SwiftMailer:
+  swift_plugins:
+    - Taitava\ImapSentFolder\ImapSentFolderPlugin
+
+SilverStripe\Core\Injector\Injector:
+  Taitava\ImapSentFolder\ImapSentFolderPlugin:
+    factory: Taitava\SentEmails\ImapSentFolderFactory

@@ -1,0 +1,26 @@
+{
+  "name": "taitava/silverstripe-sentemails",
+  "description": "A module that allows saving sent email message to an IMAP server.",
+  "type": "silverstripe-vendormodule",
+  "license": "MIT",
+  "require": {
+    "silverstripe/framework": "~4.0",
+    "taitava/swiftmailer-imapsentfolder": "~1"
+  },
+  "keywords": [
+    "email",
+    "imap",
+    "sent"
+  ],
+  "authors": [
+    {
+      "name": "Jarkko Linnanvirta",
+      "email": "posti@taitavasti.fi",
+      "homepage": "http://taitavasti.fi",
+      "role": "Nerd"
+    }
+  ],
+  "extra": {
+    "installer-name": "sentemails"
+  }
+}
