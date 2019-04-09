@@ -52,10 +52,22 @@ class ImapSentFolderFactory implements Factory
 	 */
 	public function create($service, array $params = array())
 	{
+		$this->include_plugin_classes();
 		$mailboxes = (array) static::config()->mailboxes;
 		$sent_folder_plugin = new ImapSentFolderPlugin($mailboxes);
 		$sent_folder_plugin->setCallBeforeSaving($this->callback_before_saving());
 		return $sent_folder_plugin;
+	}
+	
+	/**
+	 * SilverStripe doeesn't autoload taitava/swiftmailer-imapsentfolder because it doesn't contain a _config folder nor
+	 * a _config.php file. I don't know a better way to include these PHP classes, so do it just with the basic require_once
+	 * command.
+	 */
+	private function include_plugin_classes()
+	{
+		require_once Director::getAbsFile('vendor/taitava/swiftmailer-imapsentfolder/src/ImapException.php');
+		require_once Director::getAbsFile('vendor/taitava/swiftmailer-imapsentfolder/src/ImapSentFolderPlugin.php');
 	}
 	
 	private function callback_before_saving()
