@@ -4,6 +4,7 @@
 namespace Taitava\SentEmails;
 
 
+use SilverStripe\Control\Director;
 use SilverStripe\Core\Config\Configurable;
 use SilverStripe\Core\Extensible;
 use SilverStripe\Core\Injector\Factory;
